@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ngubohlanga Tourism &amp; Executive Transport | Airport transfers &amp; chauffeur hire across South Africa</title>
+<meta name="description" content="Airport transfers, executive chauffeur, corporate and intercity transport across South Africa. Book a vehicle to Johannesburg, Cape Town, Durban, Gqeberha and more.">
+<meta property="og:title" content="Ngubohlanga Tourism &amp; Executive Transport">
+<meta property="og:description" content="One booking. Any destination. Professional transport services across South Africa.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Yellowtail&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#book">Skip to booking form</a>
+
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Ngubohlanga Tourism and Executive Transport home">
+    <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M4 34c8-2 12-14 20-14s10 8 20 6" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M6 40c10 0 14-8 22-8s10 4 14 4" fill="none" stroke="var(--gold-soft)" stroke-width="2" stroke-dasharray="3 4" stroke-linecap="round"/>
+      <path d="M14 26l8-14 6 10 4-6 6 10z" fill="var(--gold)"/>
+      <circle cx="36" cy="10" r="3" fill="var(--gold-soft)"/>
+    </svg>
+    <span class="brand-words">
+      <strong>Ngubohlanga</strong>
+      <em>Tourism &amp; Executive Transport</em>
+    </span>
+  </a>
+
+  <nav class="topnav" aria-label="Main">
+    <a href="#services">Services</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#why">Why us</a>
+    <a href="#book">Book</a>
+    <a href="driver.html">Driver</a>
+  </nav>
+
+  <a class="topcall" href="tel:+27768350887">
+    <span>Call now</span>
+    <strong>076 835 0887</strong>
+  </a>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="script">Your journey. Our priority.</p>
+      <h1>One booking.<br>Any destination.</h1>
+      <p class="lede">
+        Airport transfers, executive chauffeur and intercity travel across all nine provinces.
+        Vetted drivers, clean vehicles, fixed quotes before you travel.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#book">Get a quotation</a>
+        <a class="btn btn-line" href="https://wa.me/27768350887" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+      <ul class="hero-facts">
+        <li><strong>10+</strong> cities served</li>
+        <li><strong>24/7</strong> airport pickups</li>
+        <li><strong>1&ndash;22</strong> seats per booking</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-head">
+      <h2>Professional transport services across South Africa</h2>
+      <p>Six ways we move people. Pick the one that fits your trip and we quote on it.</p>
+    </div>
+    <ul class="service-grid">
+      <li>
+        <span class="chip" aria-hidden="true">&#9992;</span>
+        <h3>Airport transfers</h3>
+        <p>Meet-and-greet at arrivals, flight tracked, driver waiting with a name board.</p>
+      </li>
+      <li>
+        <span class="chip" aria-hidden="true">&#127796;</span>
+        <h3>Tourism transport</h3>
+        <p>Day tours and multi-day routes for visitors exploring South Africa.</p>
+      </li>
+      <li>
+        <span class="chip" aria-hidden="true">&#128104;</span>
+        <h3>Executive chauffeur</h3>
+        <p>VIP and government delegations, discreet drivers, executive sedans and vans.</p>
+      </li>
+      <li>
+        <span class="chip" aria-hidden="true">&#127970;</span>
+        <h3>Corporate transport</h3>
+        <p>Staff and client movement for business travel, billed on account.</p>
+      </li>
+      <li>
+        <span class="chip" aria-hidden="true">&#8646;</span>
+        <h3>Intercity transfers</h3>
+        <p>Any province, any destination, door to door on long-distance routes.</p>
+      </li>
+      <li>
+        <span class="chip" aria-hidden="true">&#128101;</span>
+        <h3>Group transport</h3>
+        <p>Families, events and conferences in 14 to 22 seater vehicles.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="routes" id="destinations">
+    <div class="section-head">
+      <h2>Destinations and popular routes</h2>
+      <p>Tap a city to load it into the booking form as your drop-off.</p>
+    </div>
+    <ul class="route-rail" id="routeRail">
+      <li><button type="button" data-city="Johannesburg">Johannesburg</button></li>
+      <li><button type="button" data-city="Cape Town">Cape Town</button></li>
+      <li><button type="button" data-city="Durban">Durban</button></li>
+      <li><button type="button" data-city="Gqeberha">Gqeberha</button></li>
+      <li><button type="button" data-city="East London">East London</button></li>
+      <li><button type="button" data-city="Mbombela">Mbombela</button></li>
+      <li><button type="button" data-city="Bloemfontein">Bloemfontein</button></li>
+      <li><button type="button" data-city="Kimberley">Kimberley</button></li>
+      <li><button type="button" data-city="Polokwane">Limpopo</button></li>
+      <li><button type="button" data-city="">And more&hellip;</button></li>
+    </ul>
+  </section>
+
+  <section class="why" id="why">
+    <div class="section-head">
+      <h2>Travel in comfort, with confidence</h2>
+    </div>
+    <dl class="why-list">
+      <div><dt>Safe and reliable</dt><dd>Your safety is our priority. Every trip can be shared live with someone you trust.</dd></div>
+      <div><dt>Punctual</dt><dd>On time, every time. We build buffer into airport and long-distance runs.</dd></div>
+      <div><dt>Professional drivers</dt><dd>Trained, vetted and courteous, with valid PrDP licensing.</dd></div>
+      <div><dt>Comfortable vehicles</dt><dd>Clean, modern and well maintained, serviced on schedule.</dd></div>
+      <div><dt>Customer focused</dt><dd>Personalised service for every client, from solo travellers to conferences.</dd></div>
+    </dl>
+  </section>
+
+  <section class="booking" id="book">
+    <div class="booking-grid">
+
+      <form class="form" id="bookingForm" novalidate>
+        <h2>Book now, get a quotation today</h2>
+        <p class="form-note">We reply on WhatsApp or email, usually within the hour during business hours.</p>
+
+        <div class="row">
+          <label>Full name
+            <input type="text" name="name" id="name" autocomplete="name" required>
+          </label>
+          <label>Mobile number
+            <input type="tel" name="phone" id="phone" placeholder="076 835 0887" autocomplete="tel" required>
+          </label>
+        </div>
+
+        <label>Email address
+          <input type="email" name="email" id="email" autocomplete="email" required>
+        </label>
+
+        <label>Service needed
+          <select name="service" id="service" required>
+            <option value="Airport transfer">Airport transfer</option>
+            <option value="Tourism transport">Tourism transport</option>
+            <option value="Executive chauffeur">Executive chauffeur</option>
+            <option value="Corporate transport">Corporate transport</option>
+            <option value="Intercity transfer">Intercity transfer</option>
+            <option value="Group transport">Group transport</option>
+          </select>
+        </label>
+
+        <div class="row">
+          <label>Pick-up address
+            <input type="text" name="pickup" id="pickup" placeholder="Cape Town International Airport" required>
+          </label>
+          <label>Drop-off address
+            <input type="text" name="dropoff" id="dropoff" placeholder="V&amp;A Waterfront, Cape Town" required>
+          </label>
+        </div>
+
+        <div class="row">
+          <label>Date
+            <input type="date" name="date" id="date" required>
+          </label>
+          <label>Time
+            <input type="time" name="time" id="time" required>
+          </label>
+          <label>Passengers
+            <input type="number" name="passengers" id="passengers" min="1" max="22" value="1" required>
+          </label>
+        </div>
+
+        <label>Anything we should know?
+          <textarea name="notes" id="notes" rows="3" placeholder="Flight number, luggage, child seat, extra stops"></textarea>
+        </label>
+
+        <button class="btn btn-gold btn-wide" type="submit" id="submitBtn">Send booking request</button>
+        <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <aside class="map-panel">
+        <h3>Your route</h3>
+        <p class="map-hint">Fill in both addresses and the route appears here with an estimated distance.</p>
+        <div id="quoteMap" class="map" role="img" aria-label="Map showing the pick-up and drop-off points"></div>
+        <dl class="estimate" id="estimate" hidden>
+          <div><dt>Distance</dt><dd id="estDistance">&mdash;</dd></div>
+          <div><dt>Driving time</dt><dd id="estDuration">&mdash;</dd></div>
+          <div><dt>Indicative fare</dt><dd id="estFare">&mdash;</dd></div>
+        </dl>
+        <p class="disclaimer">Estimates are a guide only. Your confirmed quote comes back from our office and is fixed before you travel.</p>
+      </aside>
+
+    </div>
+  </section>
+
+  <section class="safety">
+    <div class="safety-inner">
+      <p class="script">Safety first</p>
+      <h2>Live trip sharing for every driver</h2>
+      <p>
+        Our drivers run an in-cab navigator that opens turn-by-turn directions in Bolt, Google Maps
+        or Waze, shares their live position with the office, and sends an emergency alert with one tap.
+        Nobody drives a long route unwatched.
+      </p>
+      <a class="btn btn-line" href="driver.html">Open the driver navigator</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Talk to us</h2>
+    <ul class="contact-list">
+      <li><a href="tel:+27768350887">076 835 0887</a></li>
+      <li><a href="tel:+27656013544">065 601 3544</a></li>
+      <li><a href="mailto:ngubohlanga.tourismtransport@gmail.com">ngubohlanga.tourismtransport@gmail.com</a></li>
+      <li><a href="https://wa.me/27768350887" target="_blank" rel="noopener">WhatsApp us</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot-name">Ngubohlanga Tourism &amp; Executive Transport (PTY) Ltd</p>
+  <p class="foot-values">Safety &nbsp;&middot;&nbsp; Comfort &nbsp;&middot;&nbsp; Professionalism &nbsp;&middot;&nbsp; Excellence</p>
+  <p class="script foot-script">South Africa&rsquo;s journey starts with us</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

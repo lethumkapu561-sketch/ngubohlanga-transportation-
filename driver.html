@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Driver navigator | Ngubohlanga Transport</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Yellowtail&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M4 34c8-2 12-14 20-14s10 8 20 6" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M14 26l8-14 6 10 4-6 6 10z" fill="var(--gold)"/>
+    </svg>
+    <span class="brand-words">
+      <strong>Driver navigator</strong>
+      <em>Ngubohlanga Transport</em>
+    </span>
+  </a>
+  <span class="pill" id="liveBadge">Not sharing</span>
+</header>
+
+<main class="driver-wrap">
+
+  <p class="script">Safety first</p>
+  <h1>Start your trip</h1>
+  <p style="color:var(--muted)">
+    Load the trip reference the office gave you. The office then sees where you are
+    for as long as the trip is running.
+  </p>
+
+  <div class="trip-card">
+    <h2>Trip reference</h2>
+    <div class="form">
+      <label>Reference number
+        <input type="text" id="refInput" placeholder="NGB-4821" autocomplete="off">
+      </label>
+      <button class="btn btn-gold btn-wide" type="button" id="loadBtn">Load trip</button>
+      <p class="status" id="driverStatus" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="trip-card" id="tripDetails" hidden>
+    <h2>Trip details</h2>
+    <div class="trip-line"><span>Passenger</span><span id="tPassenger">&mdash;</span></div>
+    <div class="trip-line"><span>Contact</span><span id="tPhone">&mdash;</span></div>
+    <div class="trip-line"><span>Pick-up</span><span id="tPickup">&mdash;</span></div>
+    <div class="trip-line"><span>Drop-off</span><span id="tDropoff">&mdash;</span></div>
+    <div class="trip-line"><span>When</span><span id="tWhen">&mdash;</span></div>
+    <div class="trip-line"><span>Passengers</span><span id="tSeats">&mdash;</span></div>
+    <div class="trip-line"><span>Notes</span><span id="tNotes">&mdash;</span></div>
+  </div>
+
+  <div class="trip-card" id="navCard" hidden>
+    <h2>Navigate</h2>
+    <p style="color:var(--muted);font-size:.88rem">
+      Set the phone in its cradle and start navigation before you pull off.
+      Turn-by-turn runs in the app, not in this page.
+    </p>
+    <div id="driverMap" class="map"></div>
+    <div class="nav-buttons">
+      <a class="btn btn-gold" id="navBolt" href="#" target="_blank" rel="noopener">Open in Bolt</a>
+      <a class="btn btn-line" id="navGoogle" href="#" target="_blank" rel="noopener">Google Maps</a>
+      <a class="btn btn-line" id="navWaze" href="#" target="_blank" rel="noopener">Waze</a>
+    </div>
+  </div>
+
+  <div class="trip-card" id="safetyCard" hidden>
+    <h2>Safety</h2>
+
+    <div class="share-toggle">
+      <span>
+        <strong>Share my live position</strong>
+        <small>The office sees your location every 20 seconds.</small>
+      </span>
+      <button class="btn btn-line" type="button" id="shareBtn">Start</button>
+    </div>
+
+    <div class="trip-line"><span>Last sent</span><span id="lastPing">Never</span></div>
+
+    <p style="margin-top:1.25rem;color:var(--muted);font-size:.88rem">
+      Hold the button below if you feel unsafe. It sends your exact position to the
+      office immediately. For a crime in progress, phone 10111 or 112 first.
+    </p>
+    <button class="btn-danger" type="button" id="panicBtn">Send emergency alert</button>
+    <p class="status" id="panicStatus" role="status" aria-live="polite"></p>
+
+    <button class="btn btn-line btn-wide" type="button" id="arrivedBtn" style="margin-top:1rem">
+      Mark trip complete
+    </button>
+  </div>
+
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="driver.js"></script>
+</body>
+</html>
