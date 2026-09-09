@@ -4,7 +4,8 @@
    and sending the booking to the backend.
    ============================================================================= */
 
-const API = ""; // same server serves the site and the API. Leave blank.
+// Where the backend lives. Set in config.js, which loads before this file.
+const API = window.NGUBO_API || "";
 
 /* ---------- 1. Small helpers ---------------------------------------------- */
 
@@ -49,7 +50,7 @@ if (rail) {
 
 /* ---------- 3. The route map ---------------------------------------------- */
 
-let map, pickupMarker, dropoffMarker, routeLine;
+let map, pickupMarker, dropoffMarker, routeLine, routeCasing;
 
 function initMap() {
   const holder = $("quoteMap");
@@ -113,25 +114,41 @@ async function updateRoute() {
   if (pickupMarker) map.removeLayer(pickupMarker);
   if (dropoffMarker) map.removeLayer(dropoffMarker);
   if (routeLine) map.removeLayer(routeLine);
+  if (routeCasing) map.removeLayer(routeCasing);
 
   pickupMarker = L.marker([from.lat, from.lon], { icon: goldPin("Pick-up") }).addTo(map);
   dropoffMarker = L.marker([to.lat, to.lon], { icon: goldPin("Drop-off") }).addTo(map);
-  routeLine = L.polyline([[from.lat, from.lon], [to.lat, to.lon]], {
-    color: "#d9a526",
-    weight: 3,
-    dashArray: "6 8",
-  }).addTo(map);
 
+  // Ask the backend for the real driving route.
+  let km, minutes, line;
+  try {
+    const res = await fetch(
+      API + "/api/route?from=" + from.lat + "," + from.lon + "&to=" + to.lat + "," + to.lon
+    );
+    const route = await res.json();
+    if (route.found) {
+      km = route.distanceKm;
+      minutes = route.durationMin;
+      line = route.line;
+    }
+  } catch { /* fall through to the estimate below */ }
+
+  if (!line) {
+    // Routing unavailable. Straight line, and pad it for real roads.
+    line = [[from.lat, from.lon], [to.lat, to.lon]];
+    km = Math.round(haversine(from, to) * 1.25);
+    minutes = Math.round((km / 85) * 60);
+  }
+
+  routeCasing = L.polyline(line, { color: "#05080d", weight: 8, opacity: .9 }).addTo(map);
+  routeLine = L.polyline(line, { color: "#d9a526", weight: 4 }).addTo(map);
   map.fitBounds(routeLine.getBounds(), { padding: [40, 40] });
 
-  // Road distance runs longer than the straight line. 1.25 is a fair SA average.
-  const km = Math.round(haversine(from, to) * 1.25);
-  const hours = km / 85; // average including stops
   const fare = Math.max(350, Math.round((250 + km * 14) / 50) * 50);
+  const hrs = Math.floor(minutes / 60);
 
   $("estDistance").textContent = km + " km";
-  $("estDuration").textContent =
-    hours < 1 ? Math.round(hours * 60) + " min" : hours.toFixed(1) + " hrs";
+  $("estDuration").textContent = hrs ? hrs + " hr " + (minutes % 60) + " min" : minutes + " min";
   $("estFare").textContent = "R" + fare.toLocaleString("en-ZA") + " approx.";
   $("estimate").hidden = false;
 }

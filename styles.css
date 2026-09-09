@@ -345,3 +345,49 @@ a { color: var(--gold-soft); }
   background: var(--edge); color: var(--muted);
 }
 .pill.live { background: rgba(217,165,38,.18); color: var(--gold-soft); }
+
+/* ---------- driver: route and directions -------------------------------- */
+
+.route-summary {
+  font-weight: 800; color: var(--gold-soft); font-size: 1.05rem;
+  margin: 0 0 .75rem;
+}
+#driverMap { height: 320px; }
+
+.follow-row { margin: -.5rem 0 1rem; }
+.follow-toggle {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .88rem; color: var(--muted); cursor: pointer;
+}
+.follow-toggle input { accent-color: var(--gold); width: 18px; height: 18px; }
+
+.steps-head { font-size: .95rem; margin: 1.25rem 0 .5rem; }
+.step-list {
+  list-style: none; counter-reset: turn;
+  margin: 0 0 1.25rem; padding: 0;
+  max-height: 300px; overflow-y: auto;
+  border-top: 1px solid var(--edge);
+}
+.step-list li {
+  counter-increment: turn;
+  display: flex; align-items: baseline; gap: .75rem;
+  padding: .7rem .25rem .7rem 2.2rem;
+  border-bottom: 1px solid var(--edge);
+  font-size: .93rem; position: relative;
+}
+.step-list li::before {
+  content: counter(turn);
+  position: absolute; left: 0; top: .7rem;
+  width: 1.5rem; text-align: right;
+  color: var(--gold); font-weight: 800; font-size: .8rem;
+}
+.step-text { flex: 1; }
+.step-dist { color: var(--muted); font-size: .82rem; white-space: nowrap; }
+
+/* ---------- SVG icons ---------------------------------------------------- */
+
+.chip svg { width: 24px; height: 24px; }
+
+.why-list dt { display: flex; align-items: center; gap: .6rem; }
+.mark { display: inline-flex; color: var(--gold); flex: none; }
+.mark svg { width: 22px; height: 22px; }

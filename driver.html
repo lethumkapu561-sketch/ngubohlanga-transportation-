@@ -61,10 +61,25 @@
   <div class="trip-card" id="navCard" hidden>
     <h2>Navigate</h2>
     <p style="color:var(--muted);font-size:.88rem">
-      Set the phone in its cradle and start navigation before you pull off.
-      Turn-by-turn runs in the app, not in this page.
+      The route below follows the real roads. Read it before you pull off, then
+      tap one of the buttons for spoken turn-by-turn while you drive. Never read
+      this page while the vehicle is moving.
     </p>
+    <p class="route-summary" id="routeSummary">Loading route&hellip;</p>
     <div id="driverMap" class="map"></div>
+
+    <div class="follow-row">
+      <label class="follow-toggle">
+        <input type="checkbox" id="followMe" checked>
+        Keep the map on my vehicle
+      </label>
+    </div>
+
+    <div id="stepsWrap" hidden>
+      <h3 class="steps-head">Directions</h3>
+      <ol class="step-list" id="stepList"></ol>
+    </div>
+
     <div class="nav-buttons">
       <a class="btn btn-gold" id="navBolt" href="#" target="_blank" rel="noopener">Open in Bolt</a>
       <a class="btn btn-line" id="navGoogle" href="#" target="_blank" rel="noopener">Google Maps</a>
@@ -100,6 +115,7 @@
 </main>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="config.js"></script>
 <script src="driver.js"></script>
 </body>
 </html>
