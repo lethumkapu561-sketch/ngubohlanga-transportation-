@@ -262,6 +262,13 @@ a { color: var(--gold-soft); }
   display: block; width: 100%; height: auto;
   margin-bottom: 1rem; border-radius: var(--radius);
 }
+/* the generated photos are 4:3; crop them to a consistent band so the four
+   cards line up regardless of how each image is framed */
+.fleet-photo {
+  aspect-ratio: 4 / 3;
+  object-fit: cover; object-position: center 55%;
+  background: var(--asphalt);
+}
 .fleet-grid h3 { margin-bottom: .15rem; }
 .fleet-grid p { font-size: .92rem; color: var(--muted); margin: 0; }
 .seats {

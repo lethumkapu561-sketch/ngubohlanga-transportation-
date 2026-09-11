@@ -190,6 +190,7 @@ if (form) {
       phone: phone,
       email: $("email").value.trim(),
       service: $("service").value,
+      vehicle: $("vehicle").value,
       pickup: $("pickup").value.trim(),
       dropoff: $("dropoff").value.trim(),
       date: $("date").value,

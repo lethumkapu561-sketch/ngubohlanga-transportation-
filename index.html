@@ -99,34 +99,41 @@
   <section class="fleet" id="fleet">
     <div class="section-head">
       <h2>Our fleet</h2>
-      <p>Pick the vehicle that fits the job. Every one is serviced on schedule and cleaned between trips.</p>
+      <p>Book by vehicle class, not by badge. We assign a clean, serviced vehicle in the class you choose.</p>
     </div>
     <ul class="fleet-grid">
       <li>
-        <picture><source srcset="img/vehicle-vclass.webp" type="image/webp">
-          <img src="img/vehicle-vclass.jpg" width="202" height="177" loading="lazy" alt="Mercedes-Benz V-Class"></picture>
-        <h3>Mercedes-Benz V-Class</h3>
-        <p class="seats">Up to 7 seats</p>
-        <p>Executive chauffeur work, VIP and government delegations, airport runs with luggage.</p>
+        <img class="fleet-photo" src="https://media.viewmax.io/users/82Qa29qlcom7AIzhFrd7manIJQj4I4VU/generated/18e02678-7dfe-4b16-afe2-7bf47bd5b784.jpg" width="1024" height="768"
+             loading="lazy" decoding="async" alt="Hatchback">
+        <h3>Hatchback</h3>
+        <p class="seats">Up to 4 seats</p>
+        <p>The budget option for short city transfers and solo travellers with light luggage.</p>
       </li>
       <li>
-        <picture><source srcset="img/vehicle-fortuner.webp" type="image/webp">
-          <img src="img/vehicle-fortuner.jpg" width="215" height="189" loading="lazy" alt="Toyota Fortuner"></picture>
-        <h3>Toyota Fortuner</h3>
+        <img class="fleet-photo" src="https://media.viewmax.io/users/82Qa29qlcom7AIzhFrd7manIJQj4I4VU/generated/ebe3ba2e-03c4-4762-ad38-3696bddd623d.jpg" width="1024" height="768"
+             loading="lazy" decoding="async" alt="Sedan">
+        <h3>Sedan</h3>
+        <p class="seats">Up to 4 seats</p>
+        <p>A step up in comfort for business travellers and small parties, with full boot space.</p>
+      </li>
+      <li>
+        <img class="fleet-photo" src="https://media.viewmax.io/users/82Qa29qlcom7AIzhFrd7manIJQj4I4VU/generated/9c6ff8b1-f934-4e27-afb7-b505a646889d.jpg" width="1024" height="768"
+             loading="lazy" decoding="async" alt="SUV">
+        <h3>SUV</h3>
         <p class="seats">Up to 7 seats</p>
         <p>Tourism routes, game reserves and gravel roads where a sedan will not cope.</p>
       </li>
       <li>
-        <picture><source srcset="img/vehicle-corolla.webp" type="image/webp">
-          <img src="img/vehicle-corolla.jpg" width="184" height="161" loading="lazy" alt="Toyota Corolla"></picture>
-        <h3>Toyota Corolla</h3>
-        <p class="seats">Up to 4 seats</p>
-        <p>Solo travellers and small parties. The economical choice for city transfers.</p>
+        <img class="fleet-photo" src="https://media.viewmax.io/users/82Qa29qlcom7AIzhFrd7manIJQj4I4VU/generated/54376a89-1b04-42fd-b8c6-cd5d0e151ce4.jpg" width="1024" height="768"
+             loading="lazy" decoding="async" alt="Executive van">
+        <h3>Executive van</h3>
+        <p class="seats">Up to 7 seats</p>
+        <p>Chauffeur work, VIP and government delegations, airport runs with full luggage.</p>
       </li>
       <li>
-        <picture><source srcset="img/vehicle-quantum.webp" type="image/webp">
-          <img src="img/vehicle-quantum.jpg" width="213" height="189" loading="lazy" alt="Toyota Quantum"></picture>
-        <h3>Toyota Quantum</h3>
+        <img class="fleet-photo" src="https://media.viewmax.io/users/82Qa29qlcom7AIzhFrd7manIJQj4I4VU/generated/3d70fc56-d6ce-495d-9cf5-e16955a6a92a.jpg" width="1024" height="768"
+             loading="lazy" decoding="async" alt="22-seater minibus">
+        <h3>Sprinter</h3>
         <p class="seats">Up to 22 seats</p>
         <p>Families, events, conferences and group intercity travel.</p>
       </li>
@@ -232,6 +239,17 @@
             <option value="Corporate transport">Corporate transport</option>
             <option value="Intercity transfer">Intercity transfer</option>
             <option value="Group transport">Group transport</option>
+          </select>
+        </label>
+
+        <label>Vehicle class
+          <select name="vehicle" id="vehicle" required>
+            <option value="Hatchback">Hatchback &mdash; up to 4 seats</option>
+            <option value="Sedan">Sedan &mdash; up to 4 seats</option>
+            <option value="SUV">SUV &mdash; up to 7 seats</option>
+            <option value="Executive van">Executive van &mdash; up to 7 seats</option>
+            <option value="Sprinter">Sprinter &mdash; up to 22 seats</option>
+            <option value="Not sure">Not sure, advise me</option>
           </select>
         </label>
 
