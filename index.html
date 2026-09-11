@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Yellowtail&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preload" as="image" href="https://media.viewmax.io/users/82Qa29qlcom7AIzhFrd7manIJQj4I4VU/generated/5890db68-01f5-48e8-8d33-920daca6d979.jpg" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -33,6 +34,7 @@
 
   <nav class="topnav" aria-label="Main">
     <a href="#services">Services</a>
+    <a href="#fleet">Fleet</a>
     <a href="#destinations">Destinations</a>
     <a href="#why">Why us</a>
     <a href="#book">Book</a>
@@ -48,23 +50,83 @@
 <main id="top">
 
   <section class="hero">
+    <img class="hero-bg" src="https://media.viewmax.io/users/82Qa29qlcom7AIzhFrd7manIJQj4I4VU/generated/5890db68-01f5-48e8-8d33-920daca6d979.jpg"
+         alt="The Ngubohlanga fleet lined up on an airport forecourt at sunset, with Table Mountain behind"
+         fetchpriority="high" decoding="async">
+
     <div class="hero-inner">
-      <p class="script">Your journey. Our priority.</p>
-      <h1>One booking.<br>Any destination.</h1>
+      <div class="lockup">
+        <svg class="lockup-mark" viewBox="0 0 120 72" aria-hidden="true">
+          <path d="M6 52C22 48 30 20 54 20s28 20 60 14" fill="none" stroke="url(#g1)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M10 62c22 0 30-14 52-14s24 8 34 8" fill="none" stroke="url(#g1)" stroke-width="2.5" stroke-dasharray="4 6" stroke-linecap="round" opacity=".8"/>
+          <path d="M24 40 44 8l14 22 9-13 14 23z" fill="url(#g1)"/>
+          <path d="M84 14c6-5 14-8 22-7l-6 5 8 2-9 5" fill="url(#g1)"/>
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f3da92"/>
+              <stop offset="55%" stop-color="#d9a526"/>
+              <stop offset="100%" stop-color="#a97c12"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h1 class="wordmark">Ngubohlanga</h1>
+        <p class="lockup-sub">Tourism &amp; Executive Transport <span>(Pty) Ltd</span></p>
+        <p class="script lockup-script">Your Journey. Our Priority.</p>
+      </div>
+
+      <p class="hero-line">One booking. Any destination.</p>
       <p class="lede">
         Airport transfers, executive chauffeur and intercity travel across all nine provinces.
-        Vetted drivers, clean vehicles, fixed quotes before you travel.
       </p>
       <div class="hero-actions">
         <a class="btn btn-gold" href="#book">Get a quotation</a>
         <a class="btn btn-line" href="https://wa.me/27768350887" target="_blank" rel="noopener">Chat on WhatsApp</a>
       </div>
+
       <ul class="hero-facts">
         <li><strong>10+</strong> cities served</li>
         <li><strong>24/7</strong> airport pickups</li>
         <li><strong>1&ndash;22</strong> seats per booking</li>
+        <li><strong>9</strong> provinces covered</li>
       </ul>
     </div>
+  </section>
+
+  <section class="fleet" id="fleet">
+    <div class="section-head">
+      <h2>Our fleet</h2>
+      <p>Pick the vehicle that fits the job. Every one is serviced on schedule and cleaned between trips.</p>
+    </div>
+    <ul class="fleet-grid">
+      <li>
+        <picture><source srcset="img/vehicle-vclass.webp" type="image/webp">
+          <img src="img/vehicle-vclass.jpg" width="202" height="177" loading="lazy" alt="Mercedes-Benz V-Class"></picture>
+        <h3>Mercedes-Benz V-Class</h3>
+        <p class="seats">Up to 7 seats</p>
+        <p>Executive chauffeur work, VIP and government delegations, airport runs with luggage.</p>
+      </li>
+      <li>
+        <picture><source srcset="img/vehicle-fortuner.webp" type="image/webp">
+          <img src="img/vehicle-fortuner.jpg" width="215" height="189" loading="lazy" alt="Toyota Fortuner"></picture>
+        <h3>Toyota Fortuner</h3>
+        <p class="seats">Up to 7 seats</p>
+        <p>Tourism routes, game reserves and gravel roads where a sedan will not cope.</p>
+      </li>
+      <li>
+        <picture><source srcset="img/vehicle-corolla.webp" type="image/webp">
+          <img src="img/vehicle-corolla.jpg" width="184" height="161" loading="lazy" alt="Toyota Corolla"></picture>
+        <h3>Toyota Corolla</h3>
+        <p class="seats">Up to 4 seats</p>
+        <p>Solo travellers and small parties. The economical choice for city transfers.</p>
+      </li>
+      <li>
+        <picture><source srcset="img/vehicle-quantum.webp" type="image/webp">
+          <img src="img/vehicle-quantum.jpg" width="213" height="189" loading="lazy" alt="Toyota Quantum"></picture>
+        <h3>Toyota Quantum</h3>
+        <p class="seats">Up to 22 seats</p>
+        <p>Families, events, conferences and group intercity travel.</p>
+      </li>
+    </ul>
   </section>
 
   <section class="services" id="services">
